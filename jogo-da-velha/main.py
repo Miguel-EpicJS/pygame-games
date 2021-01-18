@@ -1,4 +1,5 @@
 import sys, pygame, random
+from draw_game_board import draw_game_board
 
 pygame.init()
 
@@ -9,7 +10,10 @@ screen = pygame.display.set_mode(size)
 
 screen.fill(colors["white"])
 
+draw_game_board(screen, colors["black"], 2)
+
 while 1:
     for event in pygame.event.get():
         if event.type == pygame.QUIT: sys.exit()
     pygame.display.flip()
+    print(pygame.mouse.get_pos())
